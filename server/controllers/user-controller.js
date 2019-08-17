@@ -19,7 +19,7 @@ router.post('/register', async (req, res) => {
         let data = await user.authorize();
         
         // send back the new user and auth token to the client {user, authToken}
-        // console.log(res.json(data))
+        // console.log(data));
         return res.json(data);
 
     } catch(err) {
@@ -62,7 +62,7 @@ router.delete('/logout', async (req, res) => {
         await req.user.logout(authToken);
         return res.status(204).send();
     }
-
+    
     // If the user is missing, then they're not logged in.  Use status code 400 to indicate a bad request was made
     return res.status(400).send(
         { errors: [{ message: 'not authenticated' }] }

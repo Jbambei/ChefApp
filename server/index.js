@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const customAuthMiddleware = require('./middleware/custom-auth-middleware');
 const userController = require('./controllers/user-controller');
+const recipeController = require('./controllers/recipe-controller');
 // directory references
 const clientDir = path.join(__dirname, `../client`);
 
@@ -43,6 +44,7 @@ app.get('/*', (req, res) => {
 // require(`./routes/html-routes`)(app) 
 // require(`./routes/api-routes`)(app)
 app.use(userController);
+app.use(recipeController);
 // Requiring our models for syncing
 const db = require('./models/index')
 
