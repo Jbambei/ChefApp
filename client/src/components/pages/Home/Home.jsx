@@ -26,7 +26,7 @@ class Home extends Component {
                                         <p className="tile-subtitle">Sign up and search through a collection of local chef's, their menu's, and current availability!</p>
                                         <p>
                                         <Link to="/ClientSignUp">
-                                        <button class="btn btn-lg, btn btn-primary">Client Sign Up</button>
+                                        <button className="btn btn-lg, btn btn-primary">Client Sign Up</button>
                                         </Link>
                                         </p>
                                     </div>
@@ -44,7 +44,7 @@ class Home extends Component {
                                         <p className="tile-subtitle">Sign up to create your menu's, share your experience, and be found by locals to start working as your own mobile restaurant!</p>
                                         <p>
                                         <Link to="/ClientSignUp">
-                                        <button class="btn btn-lg, btn btn-primary">Chef Sign Up</button> {{/* TODO: add state change to change slider for chef/nonchef on signup when clicked*/}}
+                                        <button className="btn btn-lg, btn btn-primary">Chef Sign Up</button> 
                                         </Link>
                                         </p>
                                     </div>
