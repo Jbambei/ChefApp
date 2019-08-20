@@ -2,7 +2,7 @@ const express = require(`express`);
 const bcrypt = require(`bcrypt`);
 const router = express.Router();
 // Grab User model from models folder using "destructuring" syntax
-const { User } = require("../models");
+const { User, AuthToken } = require("../models");
 
 // routes will go here
 
@@ -70,14 +70,22 @@ router.delete('/logout', async (req, res) => {
 });
 
 // Me Route - get currently logged in user
-router.get('/me', (req, res) => {
-    if (req.user) {
-        console.log(req.user)
-        return res.send(req.user)
-    }
-    res.status(404).send(
-        { errors: [{ message: 'missing auth token' }] }
-    );
+router.get('/me/:token', (req, res) => {
+    const usertoken = req.params.token
+    AuthToken.findOne({
+        where: {
+            token: usertoken
+        },
+        attributes: ['UserId']
+    }).then(user => {
+        User.findOne({
+            where: {
+                id: user.UserId
+            }
+        }).then( userdata =>{
+            return res.json(userdata)
+        })
+        })
 });
 
 
