@@ -20,7 +20,7 @@ const now = moment();
 // if (cn) {
 //   now.locale('zh-cn').utcOffset(8);
 // } else {
-  now.locale('en-us').utcOffset(0); //gb vs us?
+  now.locale('en-gb').utcOffset(0); //gb vs us?
 // }
 
 function getFormat(time) {
