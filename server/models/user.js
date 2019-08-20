@@ -18,22 +18,24 @@ module.exports = (sequelize, DataTypes) => {
     },
     userFirstName: {
       type: DataTypes.STRING,
-      required: true,
+      allowNull: false,
       len: [2, 50],
       is: ["^[a-z]+$", "i"] // will only allow letters
   },
   userLastName: {
       type: DataTypes.STRING,
-      required: true,
+      allowNull: false,
       len: [2, 50],
       is: ["^[a-z]+$", "i"] // will only allow letters
   },
   userPhone: {
       type: DataTypes.STRING,
+      allowNull: false,
       isNumeric: true          // will only allow numbers
   },
   userAddress: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false
   },
   isChef: {
     type: DataTypes.BOOLEAN

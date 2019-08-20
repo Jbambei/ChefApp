@@ -1,6 +1,8 @@
 const db = require("../models");
 const bcrypt = require(`bcrypt`);
 const { User } = require("../models");
+const axios = require('axios')
+
 
 module.exports = function(app) {
     app.get('/api/greeting', (req, res) => {
@@ -8,6 +10,74 @@ module.exports = function(app) {
         res.setHeader('Content-Type', 'application/json');
         res.send(JSON.stringify({ greeting: `Hello ${name}!` }));
       });
+
+
+      //gets directions from Google Directions API. Doing it here to hide API key 
+const getDirections = (origin, destination) => {
+  let apiKey = AIzaSyArYUj_aKKGPm5FDl1dAf_CN_Ni62nkAMM
+    try {
+      return axios.get(`https://maps.googleapis.com/maps/api/directions/json?origin=${origin}&destination=${destination}&key=${apiKey}`) 
+    } catch (error) {
+      console.log(error)
+    }
+}
+
+// display directions to page. response is translated to a series of html instructions. UNFINISHED
+
+const displayDirections = async () => {
+  const funcCall = getDirections()
+  .then(response => {
+    if (response) {
+      for (let i = 0; i < response.length; i++) {
+        let instructions = response.routes.legs.steps[i].html_instructions
+        let distance = response.routes.legs.steps[i].distance.text
+
+        console.log(instructions)
+        console.log(distance)
+
+          // display each one to the page here, so then when it loops back through its fine
+          //https://picturepan2.github.io/spectre/elements/typography.html#typography-lists
+      }
+    }
+  })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       // app.post('/register', (req, res) => {
       //   // const { email, username, password } = req.body;

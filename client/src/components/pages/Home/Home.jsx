@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
     
@@ -24,7 +25,9 @@ class Home extends Component {
                                         <p className="tile-title">Be a guest in your own home! Hire a Chef today!</p>
                                         <p className="tile-subtitle">Sign up and search through a collection of local chef's, their menu's, and current availability!</p>
                                         <p>
-                                        <button className="btn btn-primary">Guest Sign up</button>
+                                        <Link to="/ClientSignUp">
+                                        <button class="btn btn-lg, btn btn-primary">Client Sign Up</button>
+                                        </Link>
                                         </p>
                                     </div>
                                 </div>
@@ -40,7 +43,9 @@ class Home extends Component {
                                         <p className="tile-title">Become a Chef today!</p>
                                         <p className="tile-subtitle">Sign up to create your menu's, share your experience, and be found by locals to start working as your own mobile restaurant!</p>
                                         <p>
-                                        <button className="btn btn-primary">Chef Sign up</button>
+                                        <Link to="/ClientSignUp">
+                                        <button class="btn btn-lg, btn btn-primary">Chef Sign Up</button> {{/* TODO: add state change to change slider for chef/nonchef on signup when clicked*/}}
+                                        </Link>
                                         </p>
                                     </div>
                                 </div>

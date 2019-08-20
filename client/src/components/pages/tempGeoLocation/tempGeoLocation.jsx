@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import {Map, GoogleApiWrapper, Marker} from 'google-maps-react';
+//import api_routes from '../../../../../server/routes/api-routes' NEED TO FIND ALT way of querying backend
+
 // import GoogleMapReact from 'google-map-react';
  
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
@@ -13,7 +15,8 @@ class geoLocationMap extends Component {
           name: "NAME",
           position: { lat: 28.513419, lng: -81 }
         }
-      ]
+      ],
+      directions: []
     };
     this.onClick = this.onClick.bind(this);
   }
@@ -36,6 +39,10 @@ class geoLocationMap extends Component {
       };
     });
   }
+
+  // componentDidMount() {
+  //   api_routes.displaydirections()
+  // }
 
   render() {
     return (

@@ -1,16 +1,16 @@
 {
   "development": {
-    "username": "yptm0l44sr5xthrf",
-    "password": "u38k3i1vdvr9hji1",
-    "database": "zyh4r9hb7p7tmpgk",
+    "username": "root",
+    "password": "J4801787582",
+    "database": "chefapp",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
   },
   "test": {
-    "username": "yptm0l44sr5xthrf",
-    "password": "u38k3i1vdvr9hji1",
-    "database": "zyh4r9hb7p7tmpgk",
+    "username": "root",
+    "password": "J4801787582",
+    "database": "chefapp",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false

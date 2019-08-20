@@ -11,6 +11,7 @@ import TimePickerPanel from 'rc-time-picker/lib/Panel';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
 import 'moment/locale/en-gb';
+import Axios from 'axios';
 
 const format = 'YYYY-MM-DD HH:mm:ss';
 // const cn = location.search.indexOf('cn') !== -1;
@@ -19,7 +20,7 @@ const now = moment();
 // if (cn) {
 //   now.locale('zh-cn').utcOffset(8);
 // } else {
-  now.locale('en-gb').utcOffset(0);
+  now.locale('en-us').utcOffset(0); //gb vs us?
 // }
 
 function getFormat(time) {
@@ -135,6 +136,11 @@ class BookNew extends Component {
         });
       }
 
+      handleLoginSubmit(event) {
+        event.preventDefault()
+        Axios.post()
+      }
+
 
     // componentDidMount() {
         // this.searchThisMeal();
@@ -184,6 +190,7 @@ class BookNew extends Component {
                     <label className="form-label" htmlFor="input-example-1">Name</label>
                     <input className="form-input" type="text" id="input-example-1" placeholder="Name"></input>
                 </div>
+                <button type="submit">Submit</button>
                 <div style={{
         boxSizing: 'border-box',
         position: 'relative',
@@ -213,7 +220,7 @@ class BookNew extends Component {
                     readOnly
                     tabIndex="-1"
                     className="ant-calendar-picker-input ant-input"
-                    value={value && value.format(getFormat(state.showTime)) || ''}
+                    value={value.format(getFormat(state.showTime)) || ''}
                   />
                   <div ref={this.calendarContainerRef} />
                 </span>
@@ -222,6 +229,7 @@ class BookNew extends Component {
           }
         </DatePicker>
       </div>
+      <button type="submit">Submit</button>
             </div>
         )
     }
