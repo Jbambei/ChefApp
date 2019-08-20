@@ -53,8 +53,8 @@ class geoLocationMap extends Component {
           style={{ width: "80%", margin: "auto" }}
           className={"map"}
           initialCenter={{
-            lat: 40.854885,
-            lng: -88.081807
+            lat: 21.854885,
+            lng: -81.081807
           }}
           zoom={8}
           onClick={this.onClick}
