@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "J4801787582",
-    "database": "chefapp",
+    "database": "hach_schema",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
@@ -10,7 +10,7 @@
   "test": {
     "username": "root",
     "password": "J4801787582",
-    "database": "chefapp",
+    "database": "hach_schema",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false

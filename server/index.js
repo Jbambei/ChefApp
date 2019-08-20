@@ -32,19 +32,20 @@ app.use(customAuthMiddleware);
 
 // Serve public folder to request assets
 app.use(express.static(`${clientDir}/build`))
-app.get('/*', (req, res) => {
-
-    console.log('hi from app.get')
-    console.log(req)
-    console.log(res)
-    res.sendFile(path.resolve(__dirname, `${clientDir}/build`, 'index.html'));
-  });
 // Routing
 /* Server routes */
 // require(`./routes/html-routes`)(app) 
 // require(`./routes/api-routes`)(app)
 app.use(userController);
 app.use(recipeController);
+app.get('/*', (req, res) => {
+
+  console.log('hi from app.get')
+  console.log(req)
+  console.log(res)
+  res.sendFile(path.resolve(__dirname, `${clientDir}/build`, 'index.html'));
+});
+
 // Requiring our models for syncing
 const db = require('./models/index')
 

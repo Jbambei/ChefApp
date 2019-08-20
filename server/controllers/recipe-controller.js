@@ -16,7 +16,7 @@ router.post('/postrecipe', async (req, res) => {
             },
             attributes: ['UserId']
         }).then(user => {
-            console.log(user.id)
+            console.log("Found user, inserting into new recipe into database...")
             recipeTable.create({
                 recipeName: req.body.recipeName,
                 recipeDescription: req.body.recipeDescription,

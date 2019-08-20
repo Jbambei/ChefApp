@@ -9,8 +9,8 @@ import 'rc-time-picker/assets/index.css';
 import TimePickerPanel from 'rc-time-picker/lib/Panel';
 
 import moment from 'moment';
-import 'moment/locale/zh-cn';
-import 'moment/locale/en-gb';
+// import 'moment/locale/zh-cn';
+// import 'moment/locale/en-gb';
 import Axios from 'axios';
 
 const format = 'YYYY-MM-DD HH:mm:ss';
@@ -20,7 +20,7 @@ const now = moment();
 // if (cn) {
 //   now.locale('zh-cn').utcOffset(8);
 // } else {
-  now.locale('en-gb').utcOffset(0); //gb vs us?
+  now.locale('en').utcOffset(0); //gb vs us?
 // }
 
 function getFormat(time) {
