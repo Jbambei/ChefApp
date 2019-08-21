@@ -13,34 +13,31 @@ module.exports = function(app) {
 
 
       //gets directions from Google Directions API. Doing it here to hide API key 
-const getDirections = (origin, destination) => {
-  let apiKey = AIzaSyArYUj_aKKGPm5FDl1dAf_CN_Ni62nkAMM
-    try {
-      return axios.get(`https://maps.googleapis.com/maps/api/directions/json?origin=${origin}&destination=${destination}&key=${apiKey}`) 
-    } catch (error) {
-      console.log(error)
+      function removeTags(string) {
+        return string.replace(/<[^>]*>/g, " ")
     }
-}
-
-// display directions to page. response is translated to a series of html instructions. UNFINISHED
-
-const displayDirections = async () => {
-  const funcCall = getDirections()
-  .then(response => {
-    if (response) {
-      for (let i = 0; i < response.length; i++) {
-        let instructions = response.routes.legs.steps[i].html_instructions
-        let distance = response.routes.legs.steps[i].distance.text
-
-        console.log(instructions)
-        console.log(distance)
-
-          // display each one to the page here, so then when it loops back through its fine
-          //https://picturepan2.github.io/spectre/elements/typography.html#typography-lists
+    
+    const getDirections = (origin, destination) => {
+        let apiKey = "AIzaSyArYUj_aKKGPm5FDl1dAf_CN_Ni62nkAMM"
+          try {
+            return axios.get(`https://maps.googleapis.com/maps/api/directions/json?origin=${origin}&destination=${destination}&key=${apiKey}`).then(
+                response => {
+                    let steps = response.data.routes[0].legs[0].steps
+                    let instructions = [] 
+                    for (let i = 0; i < steps.length; i++){
+    
+                        instructions.push(removeTags(steps[i].html_instructions))
+                    }
+                    console.log(instructions)
+                //^^ Change this console.log to a return statement
+    
+                }
+            ) 
+          } catch (error) {
+            console.log(error)
+          }
       }
-    }
-  })
-}
+      
 
 
 
