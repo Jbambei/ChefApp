@@ -10,6 +10,7 @@ import FindAMeal from './containers/FindAMeal/FindAMeal'
 import BookNew from './components/pages/Bookings/BookNew'
 import tempGeoLocation from './components/pages/tempGeoLocation/tempGeoLocation'
 import withAuth from './withAuth'
+import AddRecipe from './components/pages/AddRecipe/AddRecipe'
 
 class App extends Component { 
   constructor() {
@@ -39,6 +40,7 @@ class App extends Component {
         <Route exact path="/FindAMeal" component = {withAuth(FindAMeal)} />
         <Route exact path="/BookNew" component = {withAuth(BookNew)} />
         <Route exact path="/tempGeoLocation" component = {withAuth(tempGeoLocation)} />
+        <Route exact path="/AddRecipe" component = {withAuth(AddRecipe)} />
       </div>
     </Router>
     )
