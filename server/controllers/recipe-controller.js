@@ -31,6 +31,17 @@ router.post('/postrecipe', async (req, res) => {
 
 });
 
+router.get('/myrecipes/:user', async (req, res) => {
+    const user = req.params.user
+    recipeTable.findAll({
+        where: {
+            UserId: user
+        }
+    }).then(recipes => {
+        return res.json(recipes)
+    })
+})
+
 
 // // Login Route =====================================================
 // router.post('/login', async (req, res) => {
