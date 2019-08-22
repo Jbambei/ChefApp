@@ -23,6 +23,12 @@ class FindAChef extends Component {
         return (        
         <div className="container">
             <h1>Local Chefs</h1>
+            <div>
+                <input type="text" className="input" placeholder="Search..." />
+                <ul>
+                
+                </ul>
+            </div>
             <div className="columns">
             {this.state.chefs.map(chef=> (
                 <ResultList 

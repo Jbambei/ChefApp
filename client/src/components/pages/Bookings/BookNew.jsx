@@ -12,6 +12,7 @@ import moment from 'moment';
 // import 'moment/locale/zh-cn';
 // import 'moment/locale/en-gb';
 import Axios from 'axios';
+import salmon from "../../../utilities/images/salmon.jpg"
 
 const format = 'YYYY-MM-DD HH:mm:ss';
 // const cn = location.search.indexOf('cn') !== -1;
@@ -179,6 +180,9 @@ class BookNew extends Component {
                 <div className="hero bg-gray">
                     <div className="hero-body">
                         <h1>Pecan Crusted Salmon</h1>
+                    </div>
+                    <div>
+                      <img src={salmon} ></img>
                     </div>
                 </div>
                 <div className="columns">

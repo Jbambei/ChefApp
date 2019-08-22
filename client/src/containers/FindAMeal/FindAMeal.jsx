@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import ResultList from './ResultList';
+import pork from "../../utilities/images/egg.jpg"
 
 class FindAMeal extends Component {
 
@@ -23,15 +24,17 @@ class FindAMeal extends Component {
             <div className="container">
                 <div className="hero bg-gray">
                     <div className="hero-body">
-                        <h1>Featured Meal!</h1>
+                        <h1>Featured Meal: Sandwich with hard boiled eggs</h1>
                     </div>
                 </div>
-                <div className="empty">
-                    <div className="empty-icon">
+                <div className="container">
+                    {/* <div className="empty-icon">
                         <i className="icon icon-people"></i>
+                    </div> */}
+                    {/* <p className="empty-title h5">There's no chef's in your area</p> */}
+                    <div>
+                        <img src={pork} width={600} alt="broken"></img>
                     </div>
-                    <p className="empty-title h5">There's no chef's in your area</p>
-                    <p className="empty-subtitle">Come back when this apps complete!</p>
                 </div>
             </div>
         )
