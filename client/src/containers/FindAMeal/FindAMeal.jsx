@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 // import ResultList from './ResultList';
 import pork from "../../utilities/images/egg.jpg"
 
+
+const bgImage = {
+    background: 'https://images.unsplash.com/photo-1432139555190-58524dae6a55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80'
+}
+
 class FindAMeal extends Component {
 
     constructor() {
@@ -22,8 +27,8 @@ class FindAMeal extends Component {
     render() {
         return (
             <div className="container">
-                <div className="hero bg-gray">
-                    <div className="hero-body">
+                <div className="hero bg-gray" style={bgImage}>
+                    <div className="hero-body" >
                         <h1>Featured Meal: Sandwich with hard boiled eggs</h1>
                     </div>
                 </div>
