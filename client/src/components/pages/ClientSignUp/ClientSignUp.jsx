@@ -62,10 +62,11 @@ class ClientSignUp extends Component {
     // } else
     return (
       <div className="ClientSignUp">
-        <div className="column col-6 col-xs-12">
+        <div className="column col-4 col-xs-12">
           <form className="form-group" onSubmit={this.handleSubmit}>
             <label htmlFor="firstName">Enter your First Name: </label>
             <input
+              class="form-input"
               id="firstname"
               name="firstname"
               type="text"
@@ -75,6 +76,7 @@ class ClientSignUp extends Component {
             <div className="form-group">
             <label htmlFor="lastName">Enter your Last Name: </label>
             <input
+              class="form-input"
               id="lastname"
               name="lastname"
               type="text"
@@ -86,6 +88,7 @@ class ClientSignUp extends Component {
             <div className="form-group">
             <label htmlFor="phoneNumber">Enter your Phone Number: </label>
             <input
+              class="form-input"
               id="phone"
               name="phone"
               type="number"
@@ -96,6 +99,7 @@ class ClientSignUp extends Component {
             <div className="form-group">
             <label htmlFor="email">Enter your email: </label>
             <input
+              class="form-input"
               id="email"
               name="email"
               type="email"
@@ -106,6 +110,7 @@ class ClientSignUp extends Component {
             <div className="form-group">
             <label htmlFor="username">Enter your username: </label>
             <input
+              class="form-input"
               id="username"
               name="username"
               type="text"
@@ -116,6 +121,7 @@ class ClientSignUp extends Component {
             <div className="form-group">
             <label htmlFor="password">Enter your password: </label>
             <input
+              class="form-input"
               id="password"
               name="password"
               type="password"
