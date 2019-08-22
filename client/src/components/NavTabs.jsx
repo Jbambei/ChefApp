@@ -2,7 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
+const navStyle = {
+    padding: '1rem'
+}
+
 class NavTabs extends React.Component {
+
+
     constructor() {
         super();
         this.state = {
@@ -36,7 +42,7 @@ class NavTabs extends React.Component {
     render () {
         if (this.state.user === true && this.state.chef === true){
             return (
-                <header className="navbar">
+                <header className="navbar" style={navStyle}>
                 <section className="navbar-section">
                     <Link to="/" className="navbar-brand mr-2">HachApp</Link>
                 </section>
@@ -55,7 +61,7 @@ class NavTabs extends React.Component {
         }
         else if (this.state.user === true && this.state.chef === false) {
             return (
-                <header className="navbar">
+                <header className="navbar " style={navStyle}>
                     <section className="navbar-section">
                         <Link to="/" className="navbar-brand mr-2">HachApp</Link>
                     </section>
@@ -72,7 +78,7 @@ class NavTabs extends React.Component {
         }
         else {
             return (
-                <header className="navbar">
+                <header className="navbar" style={navStyle}>
                 <section className="navbar-section">
                     <Link to="/" className="navbar-brand mr-2">HachApp</Link>
                 </section>

@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 
+const containerStyle={
+    padding: '2rem'
+}
+
 class Home extends Component {
     
     render() {
@@ -12,7 +16,7 @@ class Home extends Component {
                             <h1>Hire a Chef!</h1>
                         </div>
                     </div>
-                    <div className="container">
+                    <div className="container" style={containerStyle}>
                         <div className="columns">
                             <div className="column col-6">
                                 <div className="tile">
