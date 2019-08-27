@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import ResultList from './ResultList';
+import ResultList from './ResultList';
+import axios from 'axios'
 import pork from "../../utilities/images/egg.jpg"
 // import { url } from 'inspector';
 
@@ -15,17 +16,22 @@ class FindAMeal extends Component {
     constructor() {
         super();
         this.state = {
-            zipcode: "32806"
+            zipcode: "32806",
+            recipes: []
         };
     }
     componentDidMount() {
-        // this.searchMeals();
+        this.searchMeals();
         console.log(this.state)
     }
 
-    // searchMeals = () =>{
-    //     axios.get('..')
-    // }
+    searchMeals = () =>{
+        axios.get('/allrecipes')
+        .then(res => {
+            console.log(res)
+            this.setState({recipes: res.data})
+        })
+    }
 
     render() {
         return (
@@ -35,7 +41,16 @@ class FindAMeal extends Component {
                         <h1>Featured Meal: Delicious Pork</h1>
                     </div>
                 </div>
-                <div className="container">
+                <div className="columns">
+                    {this.state.recipes.map(recipes=> (
+                <ResultList
+                key={recipes.id}
+                id={recipes.id}
+                name={recipes.recipeName}
+                description={recipes.recipeDescription}
+                allergens={recipes.recipeAllergens}
+            />
+            ))}                     
                     {/* <div className="empty-icon">
                         <i className="icon icon-people"></i>
                     </div> */}

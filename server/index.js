@@ -9,6 +9,7 @@ const cors = require('cors');
 const customAuthMiddleware = require('./middleware/custom-auth-middleware');
 const userController = require('./controllers/user-controller');
 const recipeController = require('./controllers/recipe-controller');
+const chefController = require('./controllers/chef-controller');
 // directory references
 const clientDir = path.join(__dirname, `../client`);
 
@@ -38,8 +39,8 @@ app.use(express.static(`${clientDir}/build`))
 // require(`./routes/api-routes`)(app)
 app.use(userController);
 app.use(recipeController);
+app.use(chefController);
 app.get('/*', (req, res) => {
-
   console.log('hi from app.get')
   console.log(req)
   console.log(res)

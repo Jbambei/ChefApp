@@ -24,7 +24,6 @@ class NavTabs extends React.Component {
             let key = localStorage.getItem('token')
           this.setState({ user: true })
           Axios.get(`/me/` + key).then(res => {
-              console.log(res)
               if(res.data.isChef === true){
                   this.setState({ chef: true})
               }
@@ -54,6 +53,7 @@ class NavTabs extends React.Component {
                     <Link to="/tempGeoLocation" className="btn btn-link">tempGeo</Link>
                     <Link to="/AddRecipe" className="btn btn-link">Add Recipe</Link>
                     <Link to="/MyRecipes" className="btn btn-link">My Recipes</Link>
+                    <Link to="/EditProfile" className="btn btn-link">Edit Profile</Link>
                     <Link to="/" className="btn btn-link" onClick={() => {this.logout()}}>Logout</Link>
                 </section>
             </header>

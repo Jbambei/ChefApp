@@ -42,6 +42,13 @@ router.get('/myrecipes/:user', async (req, res) => {
     })
 })
 
+router.get('/allrecipes', async (req, res) => {
+    recipeTable.findAll({})
+    .then(recipes => {
+        return res.json(recipes)
+    })
+})
+
 
 // // Login Route =====================================================
 // router.post('/login', async (req, res) => {
