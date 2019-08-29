@@ -11,7 +11,7 @@ class geoLocationMap extends Component {
     this.state = {
       markers: [ //test marker
         {
-          title: "The marker`s title should appear as a tooltip.", //currently doesn't lol
+          title: "The marker`s title should appear as a tooltip.", //works, but hardcoded and appears for every one
           name: "NAME",
           position: { lat: 28.513419, lng: -81 }
         }

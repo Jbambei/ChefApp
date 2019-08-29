@@ -194,14 +194,13 @@ class BookNew extends Component {
                     <label className="form-label" htmlFor="input-example-1">Name</label>
                     <input className="form-input" type="text" id="input-example-1" placeholder="Name"></input>
                 </div>
-                <button type="submit">Submit</button>
                 <div style={{
-        boxSizing: 'border-box',
-        position: 'relative',
-        display: 'block',
-        lineHeight: 1.5,
-        marginBottom: 22,
-      }}
+                  boxSizing: 'border-box',
+                  position: 'relative',
+                  display: 'block',
+                  lineHeight: 1.5,
+                  marginBottom: 22,
+                }}
       >
         <DatePicker
           animation="slide-up"
@@ -232,8 +231,8 @@ class BookNew extends Component {
             }
           }
         </DatePicker>
-      </div>
       <button type="submit">Submit</button>
+      </div>
             </div>
         )
     }
